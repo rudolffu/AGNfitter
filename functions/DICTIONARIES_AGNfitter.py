@@ -67,7 +67,7 @@ class MODELSDICT:
         self.filters_list = a
 
         if os.path.lexists(filename):
-            self.fo = pickle.load(open(filename, 'rb'))
+            self.fo = pd.read_pickle(open(filename, 'rb'))
             self.filters = self.fo.filternames
             self.filterset_name = self.fo.name
         else:

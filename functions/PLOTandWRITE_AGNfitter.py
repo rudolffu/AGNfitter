@@ -469,7 +469,7 @@ class CHAIN:
                 self.best_fit_pars = self.flatchain.iloc[idx_sorted[0]].values
 
             elif self.mc_settings['sampling_algorithm'] == 'emcee':
-                samples = pickle.load(f, encoding='latin1')
+                samples = pd.read_pickle(f)
                 f.close()
                 self.chain = samples['chain']
                 nwalkers, nsamples, npar = samples['chain'].shape
