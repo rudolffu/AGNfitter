@@ -622,7 +622,7 @@ class FLUXES_ARRAYS:
         if self.models_settings['RADIO']==True:
             ## extend SED to radio
             RADFnu_list = []
-            lognu_min = 9
+            lognu_min = 8.25
         else:
             lognu_min = 10.5
 
