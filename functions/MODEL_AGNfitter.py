@@ -108,8 +108,8 @@ def GALAXY(path, modelsettings):
                 GALAXYFdict_4plot[str(tau_array.value[taui]),str(np.log10(age_array.value[agei])), str(ebvgal_array[ebvi])] = \
                                                                                         np.log10(gal_nu), renorm_template('GA',gal_Fnu_red)  
                 GALAXY_SFRdict[str(tau_array.value[taui]),str(np.log10(age_array.value[agei]))] = gal_SFR 
-                gal_Fnu_int = scipy.integrate.trapz(gal_Fnu.value[0:len(gal_nus):3], x=gal_nus.value[0:len(gal_nus):3])
-                gal_Fnured_int = scipy.integrate.trapz(gal_Fnu_red, x=gal_nu)
+                gal_Fnu_int = scipy.integrate.trapezoid(gal_Fnu.value[0:len(gal_nus):3], x=gal_nus.value[0:len(gal_nus):3])
+                gal_Fnured_int = scipy.integrate.trapezoid(gal_Fnu_red, x=gal_nu)
                 gal_att_int = gal_Fnu_int- gal_Fnured_int
                 GALAXYatt_dict[str(tau_array.value[taui]),str(np.log10(age_array.value[agei])), str(ebvgal_array[ebvi])] = gal_att_int 
 
@@ -134,8 +134,8 @@ def GALAXY(path, modelsettings):
                 GALAXYFdict_4plot[str(tau_array.value[taui]),str(np.log10(age_array.value[agei])), str(ebvgal_array[ebvi])] = \
                                                                                         np.log10(gal_nu), renorm_template('GA',gal_Fnu_red)  
                 GALAXY_SFRdict[str(tau_array.value[taui]),str(np.log10(age_array.value[agei]))] = gal_SFR 
-                gal_Fnu_int = scipy.integrate.trapz(gal_Fnu.value[0:len(gal_nus):3], x=gal_nus.value[0:len(gal_nus):3])
-                gal_Fnured_int = scipy.integrate.trapz(gal_Fnu_red, x=gal_nu)
+                gal_Fnu_int = scipy.integrate.trapezoid(gal_Fnu.value[0:len(gal_nus):3], x=gal_nus.value[0:len(gal_nus):3])
+                gal_Fnured_int = scipy.integrate.trapezoid(gal_Fnu_red, x=gal_nu)
                 gal_att_int = gal_Fnu_int- gal_Fnured_int
                 GALAXYatt_dict[str(tau_array.value[taui]),str(np.log10(age_array.value[agei])), str(ebvgal_array[ebvi])] = gal_att_int
 
@@ -185,8 +185,8 @@ def GALAXY(path, modelsettings):
 
                 gal_SFR= BC03dict['SFR'][metali,agei,taui,:,:].squeeze()
                 GALAXY_SFRdict[str(metal_array[metali]),str(tau_array.value[taui]),str(np.log10(age_array.value[agei]))] = gal_SFR         
-                gal_Fnu_int = scipy.integrate.trapz(gal_Fnu[0:len(gal_nus):3]*3.826e33, x=gal_nu)
-                gal_Fnured_int = scipy.integrate.trapz(gal_Fnu_red*3.826e33, x=gal_nu)
+                gal_Fnu_int = scipy.integrate.trapezoid(gal_Fnu[0:len(gal_nus):3]*3.826e33, x=gal_nu)
+                gal_Fnured_int = scipy.integrate.trapezoid(gal_Fnu_red*3.826e33, x=gal_nu)
                 gal_att_int = gal_Fnu_int.value - gal_Fnured_int
                 GALAXYatt_dict[str(metal_array[metali]),str(tau_array.value[taui]),str(np.log10(age_array.value[agei])), str(ebvgal_array[ebvi])] = gal_att_int
 
@@ -213,8 +213,8 @@ def GALAXY(path, modelsettings):
 
                 gal_SFR= BC03dict['SFR'][metali,agei,taui,:,:].squeeze()
                 GALAXY_SFRdict[str(metal_array[metali]),str(tau_array.value[taui]),str(np.log10(age_array.value[agei]))] = gal_SFR         
-                gal_Fnu_int = scipy.integrate.trapz(gal_Fnu[0:len(gal_nus):3]*3.826e33, x=gal_nu)
-                gal_Fnured_int = scipy.integrate.trapz(gal_Fnu_red*3.826e33, x=gal_nu)
+                gal_Fnu_int = scipy.integrate.trapezoid(gal_Fnu[0:len(gal_nus):3]*3.826e33, x=gal_nu)
+                gal_Fnured_int = scipy.integrate.trapezoid(gal_Fnu_red*3.826e33, x=gal_nu)
                 gal_att_int = gal_Fnu_int.value - gal_Fnured_int
                 GALAXYatt_dict[str(metal_array[metali]),str(tau_array.value[taui]),str(np.log10(age_array.value[agei])), str(ebvgal_array[ebvi])] = gal_att_int
 
@@ -265,8 +265,8 @@ def GALAXY(path, modelsettings):
 
                 gal_SFR= BC03dict['SFR'][metali,agei,taui,:,:].squeeze()
                 GALAXY_SFRdict[str(metal_array[metali]),str(tau_array.value[taui]),str(np.log10(age_array.value[agei]))] = gal_SFR         
-                gal_Fnu_int = scipy.integrate.trapz(gal_Fnu[0:len(gal_nus):3]*3.826e33, x=gal_nu)
-                gal_Fnured_int = scipy.integrate.trapz(gal_Fnu_red*3.826e33, x=gal_nu)
+                gal_Fnu_int = scipy.integrate.trapezoid(gal_Fnu[0:len(gal_nus):3]*3.826e33, x=gal_nu)
+                gal_Fnured_int = scipy.integrate.trapezoid(gal_Fnu_red*3.826e33, x=gal_nu)
                 gal_att_int = gal_Fnu_int.value - gal_Fnured_int
                 GALAXYatt_dict[str(metal_array[metali]),str(tau_array.value[taui]),str(np.log10(age_array.value[agei])), str(ebvgal_array[ebvi])] = gal_att_int
 
@@ -293,8 +293,8 @@ def GALAXY(path, modelsettings):
 
                 gal_SFR= BC03dict['SFR'][metali,agei,taui,:,:].squeeze()
                 GALAXY_SFRdict[str(metal_array[metali]),str(tau_array.value[taui]),str(np.log10(age_array.value[agei]))] = gal_SFR         
-                gal_Fnu_int = scipy.integrate.trapz(gal_Fnu[0:len(gal_nus):3]*3.826e33, x=gal_nu)
-                gal_Fnured_int = scipy.integrate.trapz(gal_Fnu_red*3.826e33, x=gal_nu)
+                gal_Fnu_int = scipy.integrate.trapezoid(gal_Fnu[0:len(gal_nus):3]*3.826e33, x=gal_nu)
+                gal_Fnured_int = scipy.integrate.trapezoid(gal_Fnu_red*3.826e33, x=gal_nu)
                 gal_att_int = gal_Fnu_int.value - gal_Fnured_int
                 GALAXYatt_dict[str(metal_array[metali]),str(tau_array.value[taui]),str(np.log10(age_array.value[agei])), str(ebvgal_array[ebvi])] = gal_att_int
 
